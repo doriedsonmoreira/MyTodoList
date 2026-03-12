@@ -12,11 +12,13 @@
         <TaskCounting :variant="3" counting="0" />
       </div>
       <AddTask />
+      <Task date="12-03-2026" />
     </div>
   </section>
 </template>
 
 <script setup>
 import AddTask from "./AddTask.vue";
+import Task from "./Task.vue";
 import TaskCounting from "./TaskCounting.vue";
 </script>
