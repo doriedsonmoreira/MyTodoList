@@ -2,6 +2,8 @@
   <section
     class="bg-[#7B37FA] h-screen row-auto content-center justify-items-center"
   >
+    <ModalAddTask v-if="showCreateTask" />
+
     <div
       class="p-[65px] grid rounded-[11px] bg-white w-[1200px] h-[800px] justify-items-center items-center"
     >
@@ -32,7 +34,10 @@
 
 <script setup>
 import AddTask from "./AddTask.vue";
+import ModalAddTask from "./ModalAddTask.vue";
 import Task from "./Task.vue";
 import TaskCounting from "./TaskCounting.vue";
 import Button from "./ui/button/Button.vue";
+
+const showCreateTask = false;
 </script>

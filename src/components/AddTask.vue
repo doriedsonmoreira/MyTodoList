@@ -7,7 +7,7 @@
             class="cursor-default select-none text-[#B0B0B0] text-[20px]"
             >Enter a new To-Do</ItemTitle
           >
-          <button class="cursor-pointer">
+          <button class="cursor-pointer" @click="showCreateTask = true">
             <img
               class="w-[33px] h-[33px]"
               src="../assets/square-rounded-plus.svg"
@@ -30,4 +30,6 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item";
+
+import Home from "./Home.vue";
 </script>
