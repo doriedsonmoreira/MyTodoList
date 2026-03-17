@@ -1,28 +1,28 @@
 <template>
-  <!-- NOT STARTED -->
   <Badge
-    v-if="variant === 1"
+    v-if="variant === 'Not Started'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#B0B0B0] rounded-[50%]"></div>
-    Not Started</Badge
   >
-  <!-- IN PROGRESS -->
+    <div class="w-[17px] h-[17px] bg-[#B0B0B0] rounded-[50%]"></div>
+    Not Started
+  </Badge>
   <Badge
-    v-if="variant === 2"
+    v-else-if="variant === 'In Progress'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#F2DD3C] rounded-[50%]"></div>
-    In Progress</Badge
   >
-  <!-- COMPLETED-->
+    <div class="w-[17px] h-[17px] bg-[#F2DD3C] rounded-[50%]"></div>
+    In Progress
+  </Badge>
   <Badge
-    v-if="variant === 3"
+    v-else-if="variant === 'Completed'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#37FA68] rounded-[50%]"></div>
-    Completed</Badge
   >
+    <div class="w-[17px] h-[17px] bg-[#37FA68] rounded-[50%]"></div>
+    Completed
+  </Badge>
 </template>
 
 <script setup>
@@ -30,6 +30,6 @@ import { Badge } from "@/components/ui/badge";
 import { defineProps } from "vue";
 
 defineProps({
-  variant: Number,
+  variant: String,
 });
 </script>

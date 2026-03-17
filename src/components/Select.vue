@@ -1,10 +1,12 @@
 <template>
   <div>
     <select
-      class="border border-[#EBEBEB] rounded-[10px] p-[2px] w-full p-[10px]"
+      class="border border-[#EBEBEB] rounded-[10px] p-[10px] w-full"
+      :value="modelValue"
+      @change="$emit('update:modelValue', $event.target.value)"
     >
-      <option :value="select.value" v-for="select in select">
-        {{ select.option }}
+      <option v-for="item in select" :key="item.value" :value="item.value">
+        {{ item.option }}
       </option>
     </select>
   </div>
@@ -13,5 +15,7 @@
 <script setup>
 defineProps({
   select: Array,
+  modelValue: String,
 });
+const emit = defineEmits(["update:modelValue"]);
 </script>

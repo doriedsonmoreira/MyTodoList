@@ -5,8 +5,9 @@
         <div class="flex justify-between">
           <ItemTitle
             class="cursor-default select-none text-[#B0B0B0] text-[20px]"
-            >Enter a new To-Do</ItemTitle
           >
+            Enter a new To-Do
+          </ItemTitle>
           <button class="cursor-pointer" @click="handleClick">
             <img
               class="w-[33px] h-[33px]"
@@ -28,5 +29,12 @@ const emit = defineEmits(["clickedAddTask"]);
 
 function handleClick() {
   emit("clickedAddTask");
+}
+
+function deleteAllTasks() {
+  if (confirm("Are you sure you want to delete ALL tsks?")) {
+    tasks.value = [];
+    alert("All tasks have been cleared!");
+  }
 }
 </script>

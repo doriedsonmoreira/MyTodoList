@@ -2,9 +2,7 @@
   <div
     class="flex bg-[#585F7A] rounded-[11px] w-[950px] h-[60px] justify-between px-[20px]"
   >
-    <ItemTitle class="text-white text-[20px]"
-      >Lorem ipsum dolor sit amet</ItemTitle
-    >
+    <ItemTitle class="text-white text-[20px]">{{ title }}</ItemTitle>
     <div class="flex gap-[50px] select-none">
       <div class="flex">
         <Priority :variant="priority" />
@@ -24,19 +22,15 @@
 </template>
 
 <script setup>
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemTitle,
-} from "@/components/ui/item";
+import { ItemActions, ItemTitle } from "@/components/ui/item";
 import Priority from "./Priority.vue";
 import Status from "./Status.vue";
 import { defineProps } from "vue";
 
 defineProps({
+  title: String,
   date: String,
-  priority: Number,
-  status: Number,
+  priority: String,
+  status: String,
 });
 </script>

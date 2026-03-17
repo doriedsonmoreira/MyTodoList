@@ -1,36 +1,36 @@
 <template>
-  <!-- LOW -->
   <Badge
-    v-if="variant === 1"
+    v-if="variant === 'Low'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#B0B0B0] rounded-[50%]"></div>
-    Low Priority</Badge
   >
-  <!-- MEDIUM -->
+    <div class="w-[17px] h-[17px] bg-[#B0B0B0] rounded-[50%]"></div>
+    Low Priority
+  </Badge>
   <Badge
-    v-if="variant === 2"
+    v-else-if="variant === 'Medium'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#F2DD3C] rounded-[50%]"></div>
-    Medium Priority</Badge
   >
-  <!-- HIGH -->
+    <div class="w-[17px] h-[17px] bg-[#F2DD3C] rounded-[50%]"></div>
+    Medium Priority
+  </Badge>
   <Badge
-    v-if="variant === 3"
+    v-else-if="variant === 'High'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#FF7300] rounded-[50%]"></div>
-    High Priority</Badge
   >
-  <!-- CRITICAL -->
+    <div class="w-[17px] h-[17px] bg-[#FF7300] rounded-[50%]"></div>
+    High Priority
+  </Badge>
   <Badge
-    v-if="variant === 4"
+    v-else-if="variant === 'Critical'"
     class="flex gap-[10px] border-transparent text-white text-[15px]"
     variant="outline"
-    ><div class="w-[17px] h-[17px] bg-[#FF0000] rounded-[50%]"></div>
-    Critical Priority</Badge
   >
+    <div class="w-[17px] h-[17px] bg-[#FF0000] rounded-[50%]"></div>
+    Critical Priority
+  </Badge>
 </template>
 
 <script setup>
@@ -38,6 +38,6 @@ import { Badge } from "@/components/ui/badge";
 import { defineProps } from "vue";
 
 defineProps({
-  variant: Number,
+  variant: String,
 });
 </script>
