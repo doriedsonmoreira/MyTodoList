@@ -2,7 +2,10 @@
   <section
     class="bg-[#7B37FA] h-screen row-auto content-center justify-items-center"
   >
-    <ModalAddTask v-if="showCreateTask" />
+    <ModalAddTask
+      v-if="showCreateTask"
+      @clickedCloseCreateTask="closeCreateTask"
+    />
 
     <div
       class="p-[65px] grid rounded-[11px] bg-white w-[1200px] h-[800px] justify-items-center items-center"
@@ -13,7 +16,7 @@
         <TaskCounting :variant="2" counting="0" />
         <TaskCounting :variant="3" counting="0" />
       </div>
-      <AddTask />
+      <AddTask @clickedAddTask="addTask" />
       <div class="grid gap-[15px]">
         <Task date="12-03-2026" :priority="1" :status="1" />
         <Task date="12-03-2026" :priority="2" :status="2" />
@@ -33,11 +36,20 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import AddTask from "./AddTask.vue";
 import ModalAddTask from "./ModalAddTask.vue";
 import Task from "./Task.vue";
 import TaskCounting from "./TaskCounting.vue";
 import Button from "./ui/button/Button.vue";
 
-const showCreateTask = false;
+const showCreateTask = ref(false);
+
+function addTask() {
+  showCreateTask.value = true;
+}
+
+function closeCreateTask() {
+  showCreateTask.value = false;
+}
 </script>

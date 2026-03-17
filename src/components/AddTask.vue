@@ -7,7 +7,7 @@
             class="cursor-default select-none text-[#B0B0B0] text-[20px]"
             >Enter a new To-Do</ItemTitle
           >
-          <button class="cursor-pointer" @click="showCreateTask = true">
+          <button class="cursor-pointer" @click="handleClick">
             <img
               class="w-[33px] h-[33px]"
               src="../assets/square-rounded-plus.svg"
@@ -22,14 +22,11 @@
 </template>
 
 <script setup>
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
+import { Item, ItemContent, ItemTitle } from "@/components/ui/item";
 
-import Home from "./Home.vue";
+const emit = defineEmits(["clickedAddTask"]);
+
+function handleClick() {
+  emit("clickedAddTask");
+}
 </script>

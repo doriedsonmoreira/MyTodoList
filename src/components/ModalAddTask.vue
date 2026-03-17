@@ -1,9 +1,18 @@
 <template>
-  <div class="w-full max-w-md bg-white p-[40px] rounded-[11px]">
+  <div
+    class="w-full max-w-md bg-white p-[40px] rounded-[11px] fixed shadow-lg plce-self-center"
+  >
     <form>
       <FieldGroup>
         <FieldSet>
-          <FieldLegend class="text-[20px]">Create Task</FieldLegend>
+          <div class="flex w-full justify-between items-center">
+            <FieldLegend class="text-[20px] text-[#585F7A]"
+              >Create Task</FieldLegend
+            >
+            <button class="cursor-pointer" @click="handleClick">
+              <img src="../assets/square-rounded-x.svg" alt="" />
+            </button>
+          </div>
           <FieldGroup>
             <Field>
               <FieldLabel> Tittle</FieldLabel>
@@ -40,7 +49,7 @@
           </FieldGroup>
         </FieldSet>
 
-        <Field orientation="horizontal">
+        <Field orientation="vertical">
           <Button type="submit" class="bg-[#37FA68]"> Create </Button>
         </Field>
       </FieldGroup>
@@ -76,4 +85,10 @@ const status = [
   { value: "iProgress", option: "In Progress" },
   { value: "completed", option: "Completed" },
 ];
+
+const emit = defineEmits("clickedCloseCreateTask");
+
+function handleClick() {
+  emit("clickedCloseCreateTask");
+}
 </script>
