@@ -1,7 +1,7 @@
 <template>
   <Badge
     v-if="variant === 'Low'"
-    class="flex gap-[10px] border-transparent text-white text-[15px]"
+    class="flex gap-[10px] border-transparent text-white xl:text-[15px] lg:text-[10px]"
     variant="outline"
   >
     <div class="w-[17px] h-[17px] bg-[#B0B0B0] rounded-[50%]"></div>
@@ -9,7 +9,7 @@
   </Badge>
   <Badge
     v-else-if="variant === 'Medium'"
-    class="flex gap-[10px] border-transparent text-white text-[15px]"
+    class="flex gap-[10px] border-transparent text-white xl:text-[15px] lg:text-[10px]"
     variant="outline"
   >
     <div class="w-[17px] h-[17px] bg-[#F2DD3C] rounded-[50%]"></div>
@@ -17,7 +17,7 @@
   </Badge>
   <Badge
     v-else-if="variant === 'High'"
-    class="flex gap-[10px] border-transparent text-white text-[15px]"
+    class="flex gap-[10px] border-transparent text-white xl:text-[15px] lg:text-[10px]"
     variant="outline"
   >
     <div class="w-[17px] h-[17px] bg-[#FF7300] rounded-[50%]"></div>
@@ -25,7 +25,7 @@
   </Badge>
   <Badge
     v-else-if="variant === 'Critical'"
-    class="flex gap-[10px] border-transparent text-white text-[15px]"
+    class="flex gap-[10px] border-transparent text-white xl:text-[15px] lg:text-[10px]"
     variant="outline"
   >
     <div class="w-[17px] h-[17px] bg-[#FF0000] rounded-[50%]"></div>

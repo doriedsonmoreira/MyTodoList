@@ -9,10 +9,13 @@
     />
 
     <div
-      class="p-[65px] grid rounded-[11px] bg-white w-[1200px] h-[800px] justify-items-center items-center"
+      class="bg-white rounded-[11px] p-[40px] 
+         w-full max-w-[90%] lg:w-[900px] xl:w-[1200px] 
+         h-[800px] 
+         flex flex-col items-center justify-between shadow-xl""
     >
       <h1 class="text-[35px] text-[#585F7A]">MY TODO-LIST</h1>
-      <div class="flex gap-[275px]">
+      <div class="flex xl:gap-[275px] lg:gap-[200px] sm:gap-[80px]">
         <TaskCounting :variant="1" :counting="tasks.length" />
         <TaskCounting
           :variant="2"
@@ -24,7 +27,7 @@
         />
       </div>
       <AddTask @clickedAddTask="addTask" />
-      <div class="grid gap-[15px]">
+      <div class="grid gap-[15px] max-h-[300px] overflow-y-auto">
         <Task
           v-for="task in tasks"
           :key="task.id"

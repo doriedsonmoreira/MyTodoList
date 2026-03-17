@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <Item>
-      <ItemContent class="w-[1000px] grid">
+      <ItemContent class="xl:w-[1000px] xl:grid lg:flex lg:w-[800px]">
         <div class="flex justify-between">
           <ItemTitle
             class="cursor-default select-none text-[#B0B0B0] text-[20px]"
@@ -16,7 +16,9 @@
             />
           </button>
         </div>
-        <div class="w-[1000px] h-[3px] bg-[#585F7A]"></div>
+        <div
+          class="xl:w-[1000px] h-[3px] bg-[#585F7A] lg:w-[800px] sm:w-[500px]"
+        ></div>
       </ItemContent>
     </Item>
   </div>
@@ -29,12 +31,5 @@ const emit = defineEmits(["clickedAddTask"]);
 
 function handleClick() {
   emit("clickedAddTask");
-}
-
-function deleteAllTasks() {
-  if (confirm("Are you sure you want to delete ALL tsks?")) {
-    tasks.value = [];
-    alert("All tasks have been cleared!");
-  }
 }
 </script>
